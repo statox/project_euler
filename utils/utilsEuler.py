@@ -28,7 +28,7 @@ def eratosthenesList(limit):
     return [i for i in eratosthenesGenerator(limit)]
 
 # Test if a string is a palindromes
-def isPal(n):
+def isPalindrome(n):
     if (len(str(n))%2==0):
         return str(n)[:len(str(n))/2] == str(n)[len(str(n))-1:len(str(n))/2-1:-1]
     else:
