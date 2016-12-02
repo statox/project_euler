@@ -3,6 +3,9 @@
 
 # Probably can do faster... but it works
 
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../utils'))
 import utilsEuler
 
 primes = utilsEuler.eratosthenesList(1000000)
