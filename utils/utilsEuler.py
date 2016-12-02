@@ -23,5 +23,13 @@ def eratosthenesGenerator(limit):
             for n in xrange(i*i, limit, i):     # Mark factors non-prime
                 A[n] = False
 
+# Returs a list of the primes numbers under limit
 def eratosthenesList(limit):
     return [i for i in eratosthenesGenerator(limit)]
+
+# Test if a string is a palindromes
+def isPal(n):
+    if (len(str(n))%2==0):
+        return str(n)[:len(str(n))/2] == str(n)[len(str(n))-1:len(str(n))/2-1:-1]
+    else:
+        return str(n)[:len(str(n))/2] == str(n)[len(str(n))-1:len(str(n))/2:-1]
