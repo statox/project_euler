@@ -35,3 +35,7 @@ def isPalindrome(n):
         return str(n)[:len(str(n))/2] == str(n)[len(str(n))-1:len(str(n))/2-1:-1]
     else:
         return str(n)[:len(str(n))/2] == str(n)[len(str(n))-1:len(str(n))/2:-1]
+
+# Return the nth triangular number
+def triangular(n):
+    return n * (n + 1)/2
