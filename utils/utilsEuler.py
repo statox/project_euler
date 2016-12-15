@@ -56,3 +56,29 @@ def permute(n):
                     print "+1000000 permutations: " + i+s
 
         return list
+
+# Solves an equation of the form ax^2 + bx + c = 0
+# Returns only real solutions (delta >= 0) in a list
+def solveSecondDegreeEquation(a, b, c):
+    d = (b*b) - (4*a*c)
+
+    if (d > 0):
+        return [(-1*b-math.sqrt(d))/(2*a), (-1*b+math.sqrt(d))/(2*a)]
+    elif (d == 0):
+        return (-1*b)/(2*a)
+    else:
+        return None
+
+# Generate the Nth pentagonal number
+def getPentagonal(n):
+    return n * (3*n - 1) * 0.5
+
+# Check if a number is pentagonal
+def isPentagonal(x):
+    solutions = solveSecondDegreeEquation(3, -1, -2 * x)
+
+    for s in solutions:
+        if (s.is_integer() and s > 0):
+            return True
+
+    return False
