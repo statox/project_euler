@@ -17,9 +17,28 @@ def eratosthenesGenerator(limit):
             for n in xrange(i*i, limit, i):     # Mark factors non-prime
                 A[n] = False
 
+# Same as eratosthenesGenerator but use a while loop instead of a for loop
+# This way the function can generate sieve with much more number without
+# memory error
+def eratosthenesGenerator2(limit):
+    # Generating the list and marking 0 and 1
+    A = [True for i in range(limit)]
+    A[0] = A[1] = False
+
+    # Using yield to create a generator containing the prime numbers
+    for (i, isprime) in enumerate(A):
+        if isprime:
+            yield i
+            n = i*i - i
+            while (n<limit-i):
+            # for n in xrange(i*i, limit, i):     # Mark factors non-prime
+                n += i
+                A[n] = False
+
 # Returs a list of the primes numbers under limit
 def eratosthenesList(limit):
-    return [i for i in eratosthenesGenerator(limit)]
+    # return [i for i in eratosthenesGenerator(limit)]
+    return [i for i in eratosthenesGenerator2(limit)]
 
 
 # Test if a number is prime by trial division
