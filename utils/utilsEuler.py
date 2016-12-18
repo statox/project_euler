@@ -101,3 +101,9 @@ def isPentagonal(x):
             return True
 
     return False
+
+# Defines if the string s2 is a permutation of the string s1
+def isPermutation(s1, s2):
+    if (len(s1) == len(s2)):
+        return (sorted(s1) == sorted(s2))
+    return False
