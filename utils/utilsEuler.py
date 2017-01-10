@@ -107,3 +107,19 @@ def isPermutation(s1, s2):
     if (len(s1) == len(s2)):
         return (sorted(s1) == sorted(s2))
     return False
+
+# Generate n first numbers of fibonnaci sequence
+def fib(n):
+    if n == 1: return [0]
+    if n == 2: return [0, 1]
+
+    l = fib(n-1)
+    return l + [l[-1] + l[-2]]
+
+# Generate first numbers of fibonnaci sequence lower than limit
+def fibLimit(limit):
+    l = [0, 1]
+
+    while l[-1] + l[-2] <= limit: l.append(l[-1] + l[-2])
+
+    return l
