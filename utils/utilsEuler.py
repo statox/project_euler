@@ -3,6 +3,13 @@
 import math
 import re
 
+# Get the greatest common divisor of two integer
+def gcd(x, y):
+    while (y):
+        x, y = y, x % y
+
+    return x
+
 # Create a generator for the primes numbers under limit
 # The generator can be used only once
 def eratosthenesGenerator(limit):
