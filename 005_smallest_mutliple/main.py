@@ -10,12 +10,12 @@ def main():
         hasRemainder = False
         divisor=1
 
-        print(str(i))
         while (divisor < 20 and not hasRemainder):
             divisor += 1
             hasRemainder = not (i%divisor == 0)
 
         if (not hasRemainder):
             found = True
+    print(str(i))
 
 main()
